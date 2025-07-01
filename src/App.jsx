@@ -25,28 +25,36 @@ function App() {
   ]);
   const [value, setValue] = useState(getIntialCode("javascript"));
   const [currentLanguage, setCurrentLanguage] = useState("javascript");
-
+  const [animationIsEnabled, setAnimationIsEnabled] = useState(true);
   const handleLanguageChange = (newLanguage) => {
     const initialCode = getIntialCode(newLanguage);
     setValue(initialCode);
     setCurrentLanguage(newLanguage);
   };
   return (
-    <div className="App">
-      <div className="input">
-        <LanguageSupport
-          language={language}
-          handleLanguageChange={handleLanguageChange}
-        />
-        <EditorComponent
-          handleEditorDidMount={handleEditorDidMount}
-          currentLanguage={currentLanguage}
-          value={value}
-          setValue={setValue}
-        />
+    <>
+      <button
+        onClick={() => setAnimationIsEnabled(!animationIsEnabled)}
+        className="toggle-animations"
+      >
+        Toggle Animations
+      </button>
+      <div className={`App ${animationIsEnabled ? "" : "no-animations"}`}>
+        <div className="input">
+          <LanguageSupport
+            language={language}
+            handleLanguageChange={handleLanguageChange}
+          />
+          <EditorComponent
+            handleEditorDidMount={handleEditorDidMount}
+            currentLanguage={currentLanguage}
+            value={value}
+            setValue={setValue}
+          />
+        </div>
+        <OutputComponent value={value} language={currentLanguage} />
       </div>
-      <OutputComponent value={value} language={currentLanguage} />
-    </div>
+    </>
   );
 }
 
