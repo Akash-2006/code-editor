@@ -13,9 +13,7 @@ A powerful, minimal, and blazing-fast online code editor that supports real-time
   - TypeScript
   - Python
   - Java
-  - C++
   - C#
-  - HTML/CSS (Preview-only or planned)
 - 🧠 Code execution using [Piston API](https://github.com/engineer-man/piston)
 - 🎨 Monaco Editor (same as used in VS Code)
 - 🌙 Light & Dark theme toggle
