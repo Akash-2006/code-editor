@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import LanguageSupport from "./components/LanguageSupport";
 import EditorComponent from "./components/Editor";
 import OutputComponent from "./components/Outputcomponet";
-import { supportedLanguages } from "./data/data";
+import { supportedLanguages } from "./data/language-details";
 import "./App.css";
 const getIntialCode = (lang) => {
   const data = supportedLanguages.find((language) => {
