@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { fetchOutput } from "../app/api.js";
+import { fetchOutput } from "../api/api.js";
 export default function OutputComponent({ value, language }) {
   const [output, setOutput] = useState(null);
   const [showOutput, setShowOutput] = useState(false);
